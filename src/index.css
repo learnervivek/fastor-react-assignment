@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-neutral-100 text-brand-dark antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Hide scrollbars for clean mobile horizontal scroll */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Mobile App Shell simulation on desktop */
+.app-container {
+  width: 100%;
+  max-width: 440px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background-color: #ffffff;
+  position: relative;
+  box-shadow: 0 0 50px -10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .app-container {
+    min-height: 92vh;
+    margin: 24px auto;
+    border-radius: 36px;
+    overflow: hidden;
+    border: 8px solid #1a1a1a;
+  }
+}
+
+/* Dialpad ripple / active effect */
+.keypad-btn:active {
+  transform: scale(0.92);
+}
+
